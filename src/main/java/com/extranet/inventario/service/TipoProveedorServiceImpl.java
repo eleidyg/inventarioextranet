@@ -20,7 +20,11 @@ public class TipoProveedorServiceImpl implements TipoProveedorService{
 	@Override
 	public void saveTipoProveedor(TipoProveedor tipoProveedor) {
 		_tipoProveedorDao.saveTipoProveedor(tipoProveedor);
-		
+	}
+	
+	@Override
+	public TipoProveedor findById(Long idTipoProveedor) {
+		return _tipoProveedorDao.findById(idTipoProveedor);
 	}
 
 }

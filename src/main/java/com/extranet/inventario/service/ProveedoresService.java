@@ -6,4 +6,6 @@ public interface ProveedoresService {
 
 	 boolean saveProveedor(Proveedor proveedor);
 	 
+	 Proveedor findByName(String name);
+	 
 }
