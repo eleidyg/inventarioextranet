@@ -9,8 +9,7 @@ import com.extranet.inventario.dao.ProveedoresDao;
 import com.extranet.inventario.model.Proveedor;
 
 
-@Service("proveedorService")
-@Transactional
+@Service
 public class ProveedorServiceImpl implements ProveedoresService{
 
 	@Autowired

@@ -10,8 +10,7 @@ import com.extranet.inventario.model.TipoProveedor;
 
 
 
-@Service("tipoProveedorService")
-@Transactional
+@Service
 public class TipoProveedorServiceImpl implements TipoProveedorService{
 	
 	@Autowired
@@ -23,8 +22,13 @@ public class TipoProveedorServiceImpl implements TipoProveedorService{
 	}
 	
 	@Override
-	public TipoProveedor findById(Long idTipoProveedor) {
+	public TipoProveedor findById(Integer idTipoProveedor) {
 		return _tipoProveedorDao.findById(idTipoProveedor);
+	}
+	
+	@Override
+	public TipoProveedor findByNombreTipoProveedor(String nombreTipoProveedor) {
+		return _tipoProveedorDao.findByNombreTipoProveedor(nombreTipoProveedor);
 	}
 
 }

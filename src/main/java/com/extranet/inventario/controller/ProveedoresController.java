@@ -28,7 +28,7 @@ public class ProveedoresController {
 		Proveedor proveedor1=_proveedoresService.findByName(proveedor.getNombre());
 		HttpHeaders headers = new HttpHeaders();
 		headers.setLocation(
-				uriComponentsBuilder.path("/v1/activosFijos/{id}")
+				uriComponentsBuilder.path("/v1/provedores/{id}")
 				.buildAndExpand(proveedor1.getIdproveedor())
 				.toUri()
 				);

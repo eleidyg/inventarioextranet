@@ -6,6 +6,8 @@ public interface TipoProveedorService {
 	
 	void saveTipoProveedor(TipoProveedor tipoProveedor);
 	
-	TipoProveedor findById(Long idTipoProveedor);
+	TipoProveedor findById(Integer idTipoProveedor);
+	
+	TipoProveedor findByNombreTipoProveedor(String nombreTipoProveedor);
 
 }

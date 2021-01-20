@@ -1,4 +1,4 @@
-package com.boot.extranet;
+package com.extranet.inventario.controller;
 
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;
