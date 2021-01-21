@@ -22,7 +22,7 @@ public class ProveedorServiceImpl implements ProveedoresService{
 	}
 	
 	@Override
-	public Proveedor findByName(String name) {
-		return _proveedoresDao.findByName(name);
+	public Proveedor findByNombre(String nombre) {
+		return _proveedoresDao.findByNombre(nombre);
 	}
 }

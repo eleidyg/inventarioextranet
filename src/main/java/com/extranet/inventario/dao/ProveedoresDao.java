@@ -6,6 +6,6 @@ public interface ProveedoresDao {
 	
 	void saveProveedor(Proveedor proveedor);
 	
-	Proveedor findByName(String name);
+	Proveedor findByNombre(String nombre);
 
 }

@@ -1,25 +1,24 @@
 package com.extranet.inventario.dao;
 
-import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.extranet.inventario.model.Proveedor;
 
 @Repository
-@Transactional
 public class ProveedoresDaoImpl implements ProveedoresDao{
+	
+	@Autowired
+	ProveedoresJpaSpring proveedorJpa;
 
 	@Override
 	public void saveProveedor(Proveedor proveedor) {
-		// TODO Auto-generated method stub
-		//getSession().persist(proveedor);
+		proveedorJpa.save(proveedor);
 	}
 	
 	@Override
-	public Proveedor findByName(String name) {
-		// TODO Auto-generated method stub
-		//return (Proveedor) getSession().createQuery(
-				//"from Proveedor where nombre = :name")
-				//.setParameter("name", name).uniqueResult();
+	public Proveedor findByNombre(String nombre) {
+		return proveedorJpa.findByNombre(nombre);
 	}
 }

@@ -11,13 +11,18 @@ import java.util.List;
  */
 @Entity
 @Table(name="proveedor")
+@NamedQuery(name="Proveedor.findAll", query="SELECT p FROM Proveedor p")
 public class Proveedor implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@Column(name="idproveedor")
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer idproveedor;
+	
+	//bi-directional many-to-one association to TipoProveedor
+	@ManyToOne
+	@JoinColumn(name="idtipo_proveedor")
+	private TipoProveedor tipoProveedor;
     
 	@Column(name="cadena")
 	private String cadena;
@@ -97,10 +102,6 @@ public class Proveedor implements Serializable {
 	@Column(name="telefono_contacto_grupos")
 	private String telefonoContactoGrupos;
 	
-	//bi-directional many-to-one association to TipoProveedor
-	@ManyToOne
-	@JoinColumn(name="idtipo_proveedor")
-	private TipoProveedor tipoProveedor;
 	
     //bi-directional many-to-one association to Contrato
 	//@OneToMany(mappedBy="proveedor")
