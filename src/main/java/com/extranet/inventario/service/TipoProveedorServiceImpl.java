@@ -1,34 +1,49 @@
 package com.extranet.inventario.service;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Repository;
 
+import com.extranet.inventario.dao.ProveedoresDao;
 import com.extranet.inventario.dao.TipoProveedorDao;
+import com.extranet.inventario.model.Proveedor;
 import com.extranet.inventario.model.TipoProveedor;
+import com.extranet.inventario.model.service.ITipoProveedor;
 
-
-
-@Service
-public class TipoProveedorServiceImpl implements TipoProveedorService{
+@Repository
+public class TipoProveedorServiceImpl implements ITipoProveedor{
 	
 	@Autowired
-	private TipoProveedorDao _tipoProveedorDao;
-	
+	private TipoProveedorDao dao;
+
 	@Override
-	public void saveTipoProveedor(TipoProveedor tipoProveedor) {
-		_tipoProveedorDao.saveTipoProveedor(tipoProveedor);
-	}
-	
-	@Override
-	public TipoProveedor findById(Integer idTipoProveedor) {
-		return _tipoProveedorDao.findById(idTipoProveedor);
-	}
-	
-	@Override
-	public TipoProveedor findByNombreTipoProveedor(String nombreTipoProveedor) {
-		return _tipoProveedorDao.findByNombreTipoProveedor(nombreTipoProveedor);
+	public TipoProveedor registrar(TipoProveedor t) {
+		return dao.save(t);
+		
 	}
 
+	@Override
+	public TipoProveedor modificar(TipoProveedor t) {
+		return null;
+	}
+
+	@Override
+	public void eliminar(int d) {
+		
+	}
+
+	@Override
+	public TipoProveedor listarId(int d) {
+		return null;
+	}
+
+	@Override
+	public List<TipoProveedor> listar() {
+		return dao.findAll();
+	}
+	
+	
 }

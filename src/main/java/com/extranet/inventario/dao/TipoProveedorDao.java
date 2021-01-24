@@ -1,13 +1,10 @@
 package com.extranet.inventario.dao;
 
+import org.springframework.data.jpa.repository.JpaRepository;
 import com.extranet.inventario.model.TipoProveedor;
 
-public interface TipoProveedorDao {
+public interface TipoProveedorDao extends JpaRepository<TipoProveedor, Integer>{
 	
-	void saveTipoProveedor(TipoProveedor tipoProveedor);
 	
-	TipoProveedor findById(Integer idTipoProveedor);
-	
-	TipoProveedor findByNombreTipoProveedor(String nombreTipoProveedor);
 
 }
