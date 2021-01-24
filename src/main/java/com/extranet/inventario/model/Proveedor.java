@@ -2,6 +2,11 @@ package com.extranet.inventario.model;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import java.util.List;
 
 
@@ -16,10 +21,10 @@ public class Proveedor implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="idproveedor")
 	private Integer idproveedor;
 	
 	//bi-directional many-to-one association to TipoProveedor
+	@JsonBackReference
 	@ManyToOne
 	@JoinColumn(name="idtipo_proveedor")
 	private TipoProveedor tipoProveedor;

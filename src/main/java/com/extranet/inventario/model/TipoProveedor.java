@@ -2,6 +2,10 @@ package com.extranet.inventario.model;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import java.util.List;
 
 
@@ -23,6 +27,7 @@ public class TipoProveedor implements Serializable {
 	private String nombreTipoProveedor;
 
 	//bi-directional many-to-one association to Proveedor
+	@JsonManagedReference
 	@OneToMany(mappedBy="tipoProveedor")
 	private List<Proveedor> proveedors;
 

@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,8 +22,8 @@ public class ProveedoresController {
 	@Autowired
 	private ProveedoresServiceImpl _proveedoresService;
 	
-	@RequestMapping(method = RequestMethod.POST, path = "/proveedores", consumes=MediaType.APPLICATION_JSON_VALUE,produces=MediaType.TEXT_PLAIN_VALUE)
-	public ResponseEntity<?> guardarProveedor(@RequestBody Proveedor proveedor, UriComponentsBuilder uriComponentsBuilder) {		
+	@RequestMapping(method = RequestMethod.POST, path = "/proveedores", produces=MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Proveedor> guardarProveedor(@RequestBody Proveedor proveedor, UriComponentsBuilder uriComponentsBuilder) {		
 		Proveedor obj=_proveedoresService.registrar(proveedor);
 		return new ResponseEntity<Proveedor>(obj, HttpStatus.CREATED);
 	}
