@@ -26,11 +26,6 @@ public class TipoProveedor implements Serializable {
 	@Column(name="nombre_tipo_proveedor")
 	private String nombreTipoProveedor;
 
-	//bi-directional many-to-one association to Proveedor
-	@JsonManagedReference
-	@OneToMany(mappedBy="tipoProveedor")
-	private List<Proveedor> proveedors;
-
 	public TipoProveedor() {
 	}
 
@@ -50,12 +45,5 @@ public class TipoProveedor implements Serializable {
 		this.nombreTipoProveedor = nombreTipoProveedor;
 	}
 
-	public List<Proveedor> getProveedors() {
-		return this.proveedors;
-	}
-
-	public void setProveedors(List<Proveedor> proveedors) {
-		this.proveedors = proveedors;
-	}
-
+	
 }
