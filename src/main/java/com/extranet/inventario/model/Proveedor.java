@@ -21,6 +21,9 @@ public class Proveedor implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.SEQUENCE,  generator="id_pro_generator")
+	@SequenceGenerator(name="id_pro_generator", sequenceName="sec_idproveedor", allocationSize = 1)
+	@Column(name="idproveedor")
 	private Integer idproveedor;
 	
 	//bi-directional many-to-one association to TipoProveedor
