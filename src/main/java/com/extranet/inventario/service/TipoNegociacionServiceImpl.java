@@ -4,11 +4,14 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import com.extranet.inventario.dao.TipoNegociacionDao;
 import com.extranet.inventario.model.TipoNegociacion;
 import com.extranet.inventario.model.service.ITipoNegociacion;
 
+
+@Repository
 public class TipoNegociacionServiceImpl implements ITipoNegociacion{
 	
 	@Autowired
@@ -42,5 +45,6 @@ public class TipoNegociacionServiceImpl implements ITipoNegociacion{
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	
+	
 }

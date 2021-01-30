@@ -22,10 +22,6 @@ public class TipoNegociacion implements Serializable {
 	@Column(name="nombre_tipo_negociacion")
 	private String nombreTipoNegociacion;
 
-	//bi-directional many-to-one association to Contrato
-	//@OneToMany(mappedBy="tipoNegociacion")
-	//private List<Contrato> contratos;
-
 	public TipoNegociacion() {
 	}
 
@@ -44,27 +40,5 @@ public class TipoNegociacion implements Serializable {
 	public void setNombreTipoNegociacion(String nombreTipoNegociacion) {
 		this.nombreTipoNegociacion = nombreTipoNegociacion;
 	}
-
-	//public List<Contrato> getContratos() {
-		//return this.contratos;
-	//}
-
-	//public void setContratos(List<Contrato> contratos) {
-		//this.contratos = contratos;
-	//}
-
-	//public Contrato addContrato(Contrato contrato) {
-		//getContratos().add(contrato);
-		//contrato.setTipoNegociacion(this);
-
-		//return contrato;
-	//}
-
-	//public Contrato removeContrato(Contrato contrato) {
-		//getContratos().remove(contrato);
-		//contrato.setTipoNegociacion(null);
-
-		//return contrato;
-	//}
 
 }

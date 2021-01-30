@@ -2,6 +2,7 @@ package com.extranet.inventario.service;
 
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -35,14 +36,19 @@ public class ProveedoresServiceImpl implements IProveedorService{
 
 	@Override
 	public Proveedor listarId(int d) {
-		// TODO Auto-generated method stub
-		return null;
+		Optional <Proveedor> op=dao.findById(d);
+		return op.isPresent() ? op.get() : new Proveedor();
 	}
 
 	@Override
 	public List<Proveedor> listar() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	
+	@Override
+	public List<String> listarNombreProveedor(String nombre) {
+		return dao.consultarTipoProveedorNombre(nombre);
 	}
 	
 	
