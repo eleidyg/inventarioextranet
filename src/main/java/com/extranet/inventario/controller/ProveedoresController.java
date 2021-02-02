@@ -17,6 +17,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import com.extranet.inventario.model.Proveedor;
 import com.extranet.inventario.model.TipoNegociacion;
+import com.extranet.inventario.model.TipoProveedor;
 import com.extranet.inventario.service.ProveedoresServiceImpl;
 
 @CrossOrigin(origins = "*")
@@ -42,5 +43,11 @@ public class ProveedoresController {
 	public ResponseEntity<List<String>> listarPorNombre(@PathVariable("nombre") String nombreProveedor) {		
 		List<String> obj=_proveedoresService.listarNombreProveedor(nombreProveedor);
 		return new ResponseEntity<List<String>>(obj, HttpStatus.OK);
+	}
+	
+	@RequestMapping(method = RequestMethod.GET, path = "/proveedores", headers = "Accept=application/json")
+	public ResponseEntity<List<Proveedor>> listar() {		
+		List<Proveedor> obj=_proveedoresService.listar();
+		return new ResponseEntity<List<Proveedor>>(obj, HttpStatus.OK);
 	}
 }

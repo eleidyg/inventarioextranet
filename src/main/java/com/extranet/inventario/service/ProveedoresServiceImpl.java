@@ -42,8 +42,7 @@ public class ProveedoresServiceImpl implements IProveedorService{
 
 	@Override
 	public List<Proveedor> listar() {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.findAll();
 	}
 	
 	@Override
