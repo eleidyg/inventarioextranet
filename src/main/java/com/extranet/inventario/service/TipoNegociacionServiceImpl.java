@@ -24,14 +24,11 @@ public class TipoNegociacionServiceImpl implements ITipoNegociacion{
 
 	@Override
 	public TipoNegociacion modificar(TipoNegociacion t) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public void eliminar(int d) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
@@ -42,8 +39,7 @@ public class TipoNegociacionServiceImpl implements ITipoNegociacion{
 
 	@Override
 	public List<TipoNegociacion> listar() {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.findAll();
 	}
 	
 	

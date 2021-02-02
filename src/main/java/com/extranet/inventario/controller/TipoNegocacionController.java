@@ -30,4 +30,10 @@ public class TipoNegocacionController {
 		return new ResponseEntity<TipoNegociacion>(obj, HttpStatus.CREATED);
 	}
 	
+	@RequestMapping(method = RequestMethod.GET, path = "/tiponegociacion", headers = "Accept=application/json")
+	public ResponseEntity<List<TipoNegociacion>> listar() {		
+		List<TipoNegociacion> obj=_tipoNegociacionService.listar();
+		return new ResponseEntity<List<TipoNegociacion>>(obj, HttpStatus.OK);
+	}
+	
 }
