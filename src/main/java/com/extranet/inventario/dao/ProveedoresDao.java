@@ -10,7 +10,7 @@ import com.extranet.inventario.model.Proveedor;
 
 public interface ProveedoresDao extends JpaRepository<Proveedor, Integer>{
 	
-	String query="SELECT nombre FROM proveedor where nombre LIKE %:nombre%";
+	String query="SELECT nombre FROM proveedor where nombre ILIKE %:nombre%";
 	@Query(value = query, nativeQuery = true)
 	List<String> consultarTipoProveedorNombre(@Param("nombre") String nombreNegociacion);
 
