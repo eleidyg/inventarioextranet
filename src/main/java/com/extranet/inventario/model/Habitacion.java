@@ -18,6 +18,9 @@ public class Habitacion implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.SEQUENCE,  generator="id_pro_generator")
+	@SequenceGenerator(name="id_pro_generator", sequenceName="sec_idhabitacion", allocationSize = 1)
+	@Column(name="idhabitacion")
 	private Integer idhabitacion;
 
 	@Column(name="capacidad_maxima")
