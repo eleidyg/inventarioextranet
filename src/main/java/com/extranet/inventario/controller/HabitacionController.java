@@ -55,5 +55,11 @@ public class HabitacionController {
 		List<Habitacion> obj=_habitacionService.listar();
 		return new ResponseEntity<List<Habitacion>>(obj, HttpStatus.OK);
 	}
+	
+	@RequestMapping(method = RequestMethod.GET, path ="/habitacion/{id}", headers = "Accept=application/json")
+	public ResponseEntity<Habitacion> getHabitacionById(@PathVariable("id") int idHabitacion){
+		Habitacion obj=_habitacionService.listarId(idHabitacion);
+		return new ResponseEntity<Habitacion>(obj, HttpStatus.OK);
+	 }
 
 }

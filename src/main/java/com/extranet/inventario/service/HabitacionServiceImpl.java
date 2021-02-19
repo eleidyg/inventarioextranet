@@ -1,6 +1,7 @@
 package com.extranet.inventario.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import com.extranet.inventario.dao.HabitacionDao;
 import com.extranet.inventario.dao.TipoHabitacionDao;
 import com.extranet.inventario.model.Habitacion;
+import com.extranet.inventario.model.Proveedor;
 import com.extranet.inventario.model.service.IHabitacionService;
 
 @Repository
@@ -35,8 +37,8 @@ public class HabitacionServiceImpl implements IHabitacionService{
 
 	@Override
 	public Habitacion listarId(int d) {
-		// TODO Auto-generated method stub
-		return null;
+		Optional <Habitacion> op=dao.findById(d);
+		return op.isPresent() ? op.get() : new Habitacion();
 	}
 
 	@Override
