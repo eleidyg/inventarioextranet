@@ -25,8 +25,7 @@ public class HabitacionServiceImpl implements IHabitacionService{
 
 	@Override
 	public Habitacion modificar(Habitacion t) {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.save(t);
 	}
 
 	@Override
