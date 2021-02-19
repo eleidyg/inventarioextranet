@@ -41,8 +41,7 @@ public class HabitacionServiceImpl implements IHabitacionService{
 
 	@Override
 	public List<Habitacion> listar() {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.findAll();
 	}
 
 }
