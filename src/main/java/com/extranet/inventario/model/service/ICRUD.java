@@ -14,4 +14,6 @@ public interface ICRUD<T> {
 	
 	List<T> listar();
 
+	
+
 }

@@ -20,6 +20,7 @@ import com.extranet.inventario.model.ProveedorHabitacion;
 import com.extranet.inventario.service.HabitacionServiceImpl;
 import com.extranet.inventario.service.ProveedorHabitacionServiceImpl;
 
+
 @CrossOrigin(origins = "*")
 @RestController
 public class HabitacionController {
@@ -67,4 +68,10 @@ public class HabitacionController {
 		Habitacion obj=_habitacionService.modificar(habitacion);
 		return new ResponseEntity<Habitacion>(obj, HttpStatus.OK);
 	 }
+	
+	@RequestMapping(method = RequestMethod.GET, path = "/habitacion/provee/{idHabitacion}", headers = "Accept=application/json")
+	public ResponseEntity<String> listarHabitacionTipoProveedor(@PathVariable("idHabitacion") Integer idHabitacion) {		
+		String obj=_habitacionService.listarHabitacionProveedor(idHabitacion);
+		return new ResponseEntity<String>(obj, HttpStatus.OK);
+	}
 }
