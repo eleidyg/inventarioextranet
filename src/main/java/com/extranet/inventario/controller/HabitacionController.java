@@ -63,7 +63,7 @@ public class HabitacionController {
 		return new ResponseEntity<Habitacion>(obj, HttpStatus.OK);
 	 }
 	
-	@RequestMapping(method = RequestMethod.PUT, path ="/habitacion/modificar", consumes=MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(method = RequestMethod.PUT, path ="/habitacion", consumes=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Habitacion> modificarHabitacion(@RequestBody Habitacion habitacion){
 		Habitacion obj=_habitacionService.modificar(habitacion);
 		return new ResponseEntity<Habitacion>(obj, HttpStatus.OK);
