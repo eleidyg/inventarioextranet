@@ -62,7 +62,7 @@ public class HabitacionController {
 		Habitacion obj=_habitacionService.listarId(idHabitacion);
 		return new ResponseEntity<Habitacion>(obj, HttpStatus.OK);
 	 }
-	
+	@CrossOrigin(origins = "*")
 	@RequestMapping(method = RequestMethod.PUT, path ="/habitacion", consumes=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Habitacion> modificarHabitacion(@RequestBody Habitacion habitacion){
 		Habitacion obj=_habitacionService.modificar(habitacion);
@@ -70,8 +70,8 @@ public class HabitacionController {
 	 }
 	
 	@RequestMapping(method = RequestMethod.GET, path = "/habitacion/provee/{idHabitacion}", headers = "Accept=application/json")
-	public ResponseEntity<String> listarHabitacionTipoProveedor(@PathVariable("idHabitacion") Integer idHabitacion) {		
-		String obj=_habitacionService.listarHabitacionProveedor(idHabitacion);
-		return new ResponseEntity<String>(obj, HttpStatus.OK);
+	public ResponseEntity<List<String>> listarHabitacionTipoProveedor(@PathVariable("idHabitacion") Integer idHabitacion) {		
+		List<String> obj=_habitacionService.listarHabitacionProveedor(idHabitacion);
+		return new ResponseEntity<List<String>>(obj, HttpStatus.OK);
 	}
 }

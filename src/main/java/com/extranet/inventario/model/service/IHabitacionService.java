@@ -6,6 +6,6 @@ import com.extranet.inventario.model.Habitacion;
 
 public interface IHabitacionService extends ICRUD<Habitacion>{
 	
-	String listarHabitacionProveedor(Integer idHabitacion);
+	List<String> listarHabitacionProveedor(Integer idHabitacion);
 
 }

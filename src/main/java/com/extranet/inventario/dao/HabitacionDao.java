@@ -10,9 +10,9 @@ import com.extranet.inventario.model.Habitacion;
 
 public interface HabitacionDao extends JpaRepository<Habitacion, Integer>{
 	
-	String query="SELECT p.nombre FROM habitacion h INNER JOIN proveedorhabitacion ph ON h.idhabitacion=ph.idhabitacion INNER JOIN\r\n"
+	String query="SELECT p.idproveedor, p.nombre FROM habitacion h INNER JOIN proveedorhabitacion ph ON h.idhabitacion=ph.idhabitacion INNER JOIN\r\n"
 			+ "proveedor p ON ph.idproveedor=p.idproveedor WHERE h.idhabitacion = :idHabitacion";
 	@Query(value = query, nativeQuery = true)
-	String consultarHabitacionProveedor(@Param("idHabitacion") Integer idHabitacion);
+	List<String> consultarHabitacionProveedor(@Param("idHabitacion") Integer idHabitacion);
 
 }
