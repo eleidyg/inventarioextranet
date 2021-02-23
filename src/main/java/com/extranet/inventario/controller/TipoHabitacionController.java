@@ -7,12 +7,14 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import com.extranet.inventario.model.Habitacion;
 import com.extranet.inventario.model.TipoAcomodacion;
 import com.extranet.inventario.model.TipoHabitacion;
 import com.extranet.inventario.model.TipoNegociacion;
@@ -36,4 +38,10 @@ public class TipoHabitacionController {
 		List<TipoHabitacion> obj=_tipoHabitacionService.listar();
 		return new ResponseEntity<List<TipoHabitacion>>(obj, HttpStatus.OK);
 	}
+	
+	@RequestMapping(method = RequestMethod.GET, path ="/tipohabitacion/{id}", headers = "Accept=application/json")
+	public ResponseEntity<TipoHabitacion> getHabitacionById(@PathVariable("id") int idHabitacion){
+		TipoHabitacion obj=_tipoHabitacionService.listarId(idHabitacion);
+		return new ResponseEntity<TipoHabitacion>(obj, HttpStatus.OK);
+	 }
 }

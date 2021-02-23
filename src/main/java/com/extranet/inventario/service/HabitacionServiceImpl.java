@@ -49,5 +49,11 @@ public class HabitacionServiceImpl implements IHabitacionService{
 	public List<String> listarHabitacionProveedor(Integer idHabitacion) {
 		return dao.consultarHabitacionProveedor(idHabitacion);
 	}
+	
+	@Override
+	public List<String> consultarHabitacionTipoProveedor() {
+		return dao.consultarHabitacionTipoProveedor();
+	}
+	
 
 }

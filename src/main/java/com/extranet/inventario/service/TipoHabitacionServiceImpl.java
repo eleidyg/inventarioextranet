@@ -1,11 +1,13 @@
 package com.extranet.inventario.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.extranet.inventario.dao.TipoHabitacionDao;
+import com.extranet.inventario.model.Habitacion;
 import com.extranet.inventario.model.TipoHabitacion;
 import com.extranet.inventario.model.service.ITipoHabitacion;
 
@@ -34,8 +36,8 @@ public class TipoHabitacionServiceImpl implements ITipoHabitacion{
 
 	@Override
 	public TipoHabitacion listarId(int d) {
-		
-		return null;
+		Optional <TipoHabitacion> op=dao.findById(d);
+		return op.isPresent() ? op.get() : new TipoHabitacion();
 	}
 
 	@Override

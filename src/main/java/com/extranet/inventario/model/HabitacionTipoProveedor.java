@@ -4,15 +4,13 @@ public class HabitacionTipoProveedor {
 	
 	private Integer idhabitacion;
 	private Integer idtipoHabitacion;
+	private String nombreTipoHabitacion;
 	private Integer idproveedor;
 	private String nombre;
-	private String nombreTipoHabitacion;
 	private Integer capacidadMaxima;
 	private Integer capacidadMinima;
 	private Integer numeroAdultos;
 	private Integer numeroNinos;
-	
-	
 	public Integer getIdhabitacion() {
 		return idhabitacion;
 	}
@@ -25,6 +23,12 @@ public class HabitacionTipoProveedor {
 	public void setIdtipoHabitacion(Integer idtipoHabitacion) {
 		this.idtipoHabitacion = idtipoHabitacion;
 	}
+	public String getNombreTipoHabitacion() {
+		return nombreTipoHabitacion;
+	}
+	public void setNombreTipoHabitacion(String nombreTipoHabitacion) {
+		this.nombreTipoHabitacion = nombreTipoHabitacion;
+	}
 	public Integer getIdproveedor() {
 		return idproveedor;
 	}
@@ -36,12 +40,6 @@ public class HabitacionTipoProveedor {
 	}
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
-	}
-	public String getNombreTipoHabitacion() {
-		return nombreTipoHabitacion;
-	}
-	public void setNombreTipoHabitacion(String nombreTipoHabitacion) {
-		this.nombreTipoHabitacion = nombreTipoHabitacion;
 	}
 	public Integer getCapacidadMaxima() {
 		return capacidadMaxima;
@@ -67,6 +65,7 @@ public class HabitacionTipoProveedor {
 	public void setNumeroNinos(Integer numeroNinos) {
 		this.numeroNinos = numeroNinos;
 	}
+	
 	
 	
 
