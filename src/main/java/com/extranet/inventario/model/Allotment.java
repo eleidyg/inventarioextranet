@@ -29,13 +29,12 @@ public class Allotment implements Serializable {
 	@JoinColumn(name="idhabitacion")
 	private Habitacion habitacion;
 
+	@Column(name="cantidad")
 	private Integer cantidad;
 
-	@Temporal(TemporalType.DATE)
 	@Column(name="fecha_desde")
 	private Date fechaDesde;
 
-	@Temporal(TemporalType.DATE)
 	@Column(name="fecha_hasta")
 	private Date fechaHasta;
 

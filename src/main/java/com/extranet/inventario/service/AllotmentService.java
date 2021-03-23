@@ -3,11 +3,13 @@ package com.extranet.inventario.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import com.extranet.inventario.dao.AllotmentDao;
 import com.extranet.inventario.model.Allotment;
 import com.extranet.inventario.model.service.IAllotmentService;
 
+@Repository
 public class AllotmentService implements IAllotmentService{
 	
 	@Autowired
