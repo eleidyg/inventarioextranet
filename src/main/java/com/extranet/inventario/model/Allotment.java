@@ -18,6 +18,9 @@ public class Allotment implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.SEQUENCE,  generator="id_pro_generator_allotment")
+	@SequenceGenerator(name="id_pro_generator_allotment", sequenceName="sec_idallotment", allocationSize = 1)
+	@Column(name="idallotment")
 	private Integer idallotment;
 	
 	//bi-directional many-to-one association to Habitacion
