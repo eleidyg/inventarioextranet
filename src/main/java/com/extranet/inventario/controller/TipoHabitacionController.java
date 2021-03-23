@@ -14,10 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import com.extranet.inventario.model.Habitacion;
-import com.extranet.inventario.model.TipoAcomodacion;
 import com.extranet.inventario.model.TipoHabitacion;
-import com.extranet.inventario.model.TipoNegociacion;
 import com.extranet.inventario.service.TipoHabitacionServiceImpl;
 
 @CrossOrigin(origins = "*")

@@ -17,7 +17,6 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import com.extranet.inventario.model.Habitacion;
 import com.extranet.inventario.model.HabitacionTipoProveedor;
-import com.extranet.inventario.model.Proveedor;
 import com.extranet.inventario.model.ProveedorHabitacion;
 import com.extranet.inventario.service.HabitacionServiceImpl;
 import com.extranet.inventario.service.ProveedorHabitacionServiceImpl;
